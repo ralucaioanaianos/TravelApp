@@ -1,25 +1,23 @@
-import { Component, OnInit } from '@angular/core';
-import { MatDialog } from '@angular/material/dialog';
-import { MatSnackBar } from '@angular/material/snack-bar';
+import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login-page',
-  standalone: true,
-  imports: [],
   templateUrl: './login-page.component.html',
-  styleUrl: './login-page.component.css'
+  standalone: true,
+  styleUrls: ['./login-page.component.css']
 })
 export class LoginPageComponent {
-  constructor(private dialog: MatDialog, private snackBar: MatSnackBar) { }
-
-  ngOnInit(): void {
-  }
+  constructor(private router: Router) { }
 
   login() {
-    alert("login pressed");
+    // Perform login logic here
+
+    // After successful login, navigate to the main component
+    this.router.navigate(['/main']);
   }
 
   register() {
-    alert("register pressed");
+    alert("Register pressed");
   }
 }
