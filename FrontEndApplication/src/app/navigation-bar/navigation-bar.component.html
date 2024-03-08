@@ -1,0 +1,22 @@
+<mat-toolbar color="primary">
+  <div class="left-buttons">
+    <button mat-icon-button class="example-icon" aria-label="Menu icon" (click)="openSidenav()">
+      <img src="assets/beach_icon.png" alt="App Icon" width="50px" height="50px">
+      <span>Vacation Manager</span>
+    </button>
+  </div>
+  <div class="right-buttons">
+    <button mat-icon-button aria-label="Friends icon" (click)="showAlert('Friends')">
+      <img src="assets/friends_icon.png" alt="Friends Icon" width="24px" height="24px">
+      <span>Friends</span>
+    </button>
+    <button mat-icon-button aria-label="Notifications icon" (click)="showAlert('Notifications')">
+      <img src="assets/notification_icon.png" alt="Notifications Icon" width="24px" height="24px">
+      <span>Notifications</span>
+    </button>
+    <button mat-icon-button aria-label="My Profile icon" (click)="showAlert('My Profile')">
+      <img src="assets/user.png" alt="My Profile Icon" width="24px" height="24px">
+      <span>My Profile</span>
+    </button>
+  </div>
+</mat-toolbar>

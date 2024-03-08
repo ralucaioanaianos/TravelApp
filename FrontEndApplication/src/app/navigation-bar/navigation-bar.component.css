@@ -1,0 +1,43 @@
+.mat-toolbar {
+  display: flex;
+  height: auto;
+  padding: 10px;
+  justify-content: space-between;
+  align-items: center; /* Align items vertically */
+  box-shadow: 0 13px 20px rgba(0, 0, 0, 0.1); /* Add shadow at the bottom */
+}
+
+span {
+  font-weight: normal;
+  padding-left: 5px;
+  padding-right: 10px;
+}
+
+.mat-toolbar .left-buttons {
+  display: flex;
+  align-items: center;
+}
+
+.mat-toolbar .right-buttons {
+  display: flex;
+  align-items: center;
+}
+
+.mat-toolbar button {
+  background-color: transparent;
+  border: none;
+  padding: 0;
+  margin-right: 1em;
+  text-align: center;
+  white-space: nowrap;
+  overflow: auto;
+  cursor: pointer;
+}
+
+.mat-toolbar button:focus {
+  outline: none;
+}
+
+.mat-toolbar button img {
+  vertical-align: middle; /* Align image vertically */
+}
