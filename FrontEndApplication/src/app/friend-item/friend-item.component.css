@@ -1,0 +1,39 @@
+.friend-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  border-bottom: 1px solid #ccc;
+  padding-top: 3%;
+  padding-bottom: 3%;
+}
+
+.left-side {
+  display: flex;
+  align-items: center;
+}
+
+.user-photo {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+
+.user-name {
+  font-weight: bold;
+}
+
+.right-side {
+  margin-left: auto;
+  margin-right: 5%;
+}
+
+.remove-button {
+  background-color: red;
+  color: white;
+  border: none;
+  border-radius: 20px;
+  padding: 5px 10px;
+}
+

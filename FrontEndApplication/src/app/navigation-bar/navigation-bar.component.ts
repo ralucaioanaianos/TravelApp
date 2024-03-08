@@ -1,32 +1,26 @@
 import { Component } from '@angular/core';
-import { Output, EventEmitter } from '@angular/core';
+import { Router } from '@angular/router';
 import {MatToolbar} from "@angular/material/toolbar";
-import {MatIcon} from "@angular/material/icon";
-import {NgOptimizedImage} from "@angular/common";
-
-
 
 @Component({
   selector: 'app-navigation-bar',
+  templateUrl: './navigation-bar.component.html',
   standalone: true,
   imports: [
-    MatToolbar,
-    MatIcon,
-    NgOptimizedImage,
+    MatToolbar
   ],
-  templateUrl: './navigation-bar.component.html',
-  styleUrl: './navigation-bar.component.css'
+  styleUrls: ['./navigation-bar.component.css']
 })
 export class NavigationBarComponent {
   name = 'Vacation Manager';
 
-  constructor() {}
-
-  openSidenav() {
-    // Implement your openSidenav logic here
-  }
+  constructor(private router: Router) {}
 
   showAlert(item: string) {
     alert("you clicked on " + item);
+  }
+
+  navigateToFriendsPage() {
+    this.router.navigate(['/friends']);
   }
 }
