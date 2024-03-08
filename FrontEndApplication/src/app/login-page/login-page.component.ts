@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
+import {AuthService} from "../services/AuthService";
 
 @Component({
   selector: 'app-login-page',
@@ -8,12 +9,10 @@ import { Router } from '@angular/router';
   styleUrls: ['./login-page.component.css']
 })
 export class LoginPageComponent {
-  constructor(private router: Router) { }
+  constructor(private router: Router, private authService: AuthService) { }
 
-  login() {
-    // Perform login logic here
-
-    // After successful login, navigate to the main component
+  login(email: string) {
+    this.authService.login(email);
     this.router.navigate(['/main']);
   }
 

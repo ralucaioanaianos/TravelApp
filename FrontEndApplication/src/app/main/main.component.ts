@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {NavigationBarComponent} from "../navigation-bar/navigation-bar.component";
+import {AuthService} from "../services/AuthService";
 
 @Component({
   selector: 'app-main',
@@ -10,9 +11,12 @@ import {NavigationBarComponent} from "../navigation-bar/navigation-bar.component
   templateUrl: './main.component.html',
   styleUrl: './main.component.css'
 })
-export class MainComponent {
-  constructor() { }
+export class MainComponent implements OnInit{
+  loggedInUser: string | undefined;
+
+  constructor(private authService: AuthService) { }
 
   ngOnInit(): void {
+    this.loggedInUser = this.authService.getLoggedInUser();
   }
 }
