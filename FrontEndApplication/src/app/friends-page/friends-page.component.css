@@ -1,3 +1,45 @@
 .friends-list {
-  margin: 5%;
+
+}
+
+.title {
+  margin-top: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.title h2 {
+  margin-top: 40px;
+  flex-grow: 1; /* Take up the available space */
+  text-align: center; /* Center the text */
+}
+
+.add-friend-button-container {
+  display: flex;
+  margin-right: 10%;
+  align-items: center;
+  margin-left: auto; /* Push the button to the right */
+}
+
+.add-friend-button {
+  background-color: transparent;
+  color: black;
+  margin-right: 10%;
+  border: none;
+  border-radius: 5px;
+  padding: 5px 10px;
+  cursor: pointer;
+}
+
+.add-friend-button img {
+  width: 24px;
+  height: 24px;
+  margin-right: 5px;
+}
+
+.add-friend-button span {
+  font-weight: bold;
+  vertical-align: center;
 }

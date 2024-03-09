@@ -1,0 +1,48 @@
+.vacation-item {
+  position: relative;
+  border-radius: 30px;
+  overflow: hidden;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+  height: 150px; /* Set the desired height */
+  margin-bottom: 20px;
+}
+
+.background-image {
+  width: 100%;
+  height: 100%; /* Ensure the image fills the container */
+  object-fit: cover; /* Prevent image distortion */
+}
+
+.content {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: rgba(0, 0, 0, 0);
+  padding: 10px;
+  transition: background-color 0.3s ease; /* Add transition effect */
+}
+
+.vacation-item:hover .content {
+  background-color: rgba(0, 0, 0, 0.5); /* Darken background color on hover */
+}
+
+.vacation-info {
+  color: white;
+}
+
+.vacation-name {
+  margin-left: 5%;
+  font-size: 40px;
+}
+
+.date-range {
+  margin: 0;
+  text-align: center;
+  opacity: 0; /* Initially hide the dates */
+  transition: opacity 0.3s ease; /* Add transition effect */
+}
+
+.vacation-item:hover .date-range {
+  opacity: 1; /* Show the dates on hover */
+}

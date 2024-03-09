@@ -1,0 +1,9 @@
+<div class="vacation-item">
+  <img class="background-image" src="{{ vacation?.photo }}" alt="{{ vacation?.name }}">
+  <div class="content">
+    <div class="vacation-info">
+      <h3 class="vacation-name">{{ vacation?.name }}</h3>
+      <p class="date-range">{{ vacation?.startDate | date }} - {{ vacation?.endDate | date }}</p>
+    </div>
+  </div>
+</div>

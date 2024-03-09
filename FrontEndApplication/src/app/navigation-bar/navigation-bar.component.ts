@@ -23,4 +23,8 @@ export class NavigationBarComponent {
   navigateToFriendsPage() {
     this.router.navigate(['/friends']);
   }
+
+  navigateToVacationsPage() {
+    this.router.navigate(['/vacations']);
+  }
 }

@@ -1,4 +1,14 @@
 <app-navigation-bar></app-navigation-bar>
-<div class="friends-list">
-  <app-friend-item *ngFor="let friend of friends" [user]="friend"></app-friend-item>
+
+<div class="friends-page">
+  <div class="title">
+    <h2>My Friends</h2>
+    <button class="add-friend-button" aria-label="Add Friends">
+      <img src="assets/add_friend_icon.png" alt="Add Friends Icon">
+      <span>Add Friends</span>
+    </button>
+  </div>
+  <div class="friends-list">
+    <app-friend-item *ngFor="let friend of friends" [user]="friend" (click)="viewFriendDetails(friend.name)"></app-friend-item>
+  </div>
 </div>
