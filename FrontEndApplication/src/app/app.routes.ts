@@ -5,6 +5,7 @@ import { LoginPageComponent } from './login-page/login-page.component';
 import {FriendsPageComponent} from "./friends-page/friends-page.component";
 import {FriendDetailsComponent} from "./friend-details/friend-details.component";
 import {VacationsPageComponent} from "./vacations-page/vacations-page.component";
+import {HttpClientModule} from "@angular/common/http";
 
 export const routes: Routes = [
   { path: '', redirectTo: '/login', pathMatch: 'full' },
@@ -16,7 +17,8 @@ export const routes: Routes = [
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [
+    RouterModule.forRoot(routes)],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }

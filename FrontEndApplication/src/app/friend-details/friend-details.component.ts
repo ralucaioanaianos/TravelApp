@@ -19,4 +19,6 @@ export class FriendDetailsComponent {
   ngOnInit(): void {
     this.friendName = this.route.snapshot.params['name'];
   }
+
+
 }

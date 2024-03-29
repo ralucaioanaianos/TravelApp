@@ -3,7 +3,5 @@
 <h2 class="title">My Vacations</h2>
 
 <div class="vacations-list">
-  <app-vacation-item [vacation]="rome"></app-vacation-item>
-  <app-vacation-item [vacation]="santorini"></app-vacation-item>
-  <app-vacation-item [vacation]="cairo"></app-vacation-item>
+  <app-vacation-item *ngFor="let vacation of vacations" [vacation]="vacation"></app-vacation-item>
 </div>

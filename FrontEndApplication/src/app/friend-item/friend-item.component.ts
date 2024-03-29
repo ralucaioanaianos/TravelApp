@@ -9,4 +9,9 @@ import {Component, Input} from '@angular/core';
 })
 export class FriendItemComponent {
   @Input() user: { name: string; photoUrl: string; } | undefined;
+
+  removeFriend() {
+    // Display alert when Remove Friend button is clicked
+    alert(`Removing ${this.user?.name} from your friends list.`);
+  }
 }
