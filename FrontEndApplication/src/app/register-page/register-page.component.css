@@ -1,0 +1,82 @@
+.login-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background-size: cover;
+  position: relative;
+}
+
+.background {
+  margin-right: 5%;
+  position: absolute;
+  right: 0;
+  width: 50%;
+  height: 70%;
+  background-color: rgba(0, 0, 0, 0.3); /* Black with 50% transparency */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.login-box {
+  color: #B4CAF5;
+}
+
+.welcome-text {
+  font-size: 36px;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+form {
+  align-content: center;
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group {
+  align-content: center;
+  margin-bottom: 20px;
+}
+
+label {
+  font-weight: bold;
+}
+
+input[type="email"],
+input[type="password"] {
+  width: 100%; /* Adjusted width to include padding */
+  padding: 10px;
+  border: 2px solid #B4CAF5;
+  border-radius: 5px;
+  background-color: rgba(255, 255, 255, 0.5); /* Transparent */
+  box-sizing: border-box; /* Ensure padding is included in width */
+  outline: none; /* Remove default focus outline */
+}
+
+input[type="email"]:focus,
+input[type="password"]:focus {
+  border-color: #B4CAF5; /* Change border color on focus */
+}
+
+button {
+  align-self: center;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.login-button {
+  width: 100%;
+  align-self: center;
+  background-color: #B4CAF5;
+  color: #fff;
+}
+
+.register-button {
+  align-self: center;
+  background-color: transparent;
+  color: #B4CAF5;
+}

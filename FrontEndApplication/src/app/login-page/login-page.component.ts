@@ -19,9 +19,7 @@ export class LoginPageComponent {
     this.router.navigate(['/main']);
   }
 
-  register(email: string, password: string) {
-    console.log("registering")
-    const user: User = new User('0', 'ralu', 'ianos', 'ralucaianos', 'lalala', 'miau', );
-    this.userService.addUser(user);
+  register() {
+    this.router.navigate(['/register'])
   }
 }

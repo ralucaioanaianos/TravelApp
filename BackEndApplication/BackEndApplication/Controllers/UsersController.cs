@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using BackEndApplication.Models;
+using BackEndApplication.Data;
 
 namespace BackEndApplication.Controllers
 {
@@ -13,9 +14,9 @@ namespace BackEndApplication.Controllers
     [ApiController]
     public class UsersController : ControllerBase
     {
-        private readonly UserContext _context;
+        private readonly ApplicationDbContext _context;
 
-        public UsersController(UserContext context)
+        public UsersController(ApplicationDbContext context)
         {
             _context = context;
         }
