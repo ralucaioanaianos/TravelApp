@@ -7,18 +7,53 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using BackEndApplication.Models;
 using BackEndApplication.Data;
+using Microsoft.AspNetCore.Authorization;
+using BackEndApplication.JwtFeatures;
+using Microsoft.AspNetCore.Identity;
+using BackEndApplication.DTOs;
+using System.IdentityModel.Tokens.Jwt;
 
 namespace BackEndApplication.Controllers
 {
     [Route("api/[controller]")]
+   // [Authorize]
     [ApiController]
     public class UsersController : ControllerBase
     {
+        private readonly UserManager<User> _userManager;
+        //private readonly IMapper _mapper;
+        private readonly JwtHandler _jwtHandler;
         private readonly ApplicationDbContext _context;
 
-        public UsersController(ApplicationDbContext context)
+        public UsersController(ApplicationDbContext context, UserManager<User> userManager, JwtHandler jwtHandler)
         {
             _context = context;
+            _userManager = userManager;
+            _jwtHandler = jwtHandler;
+        }
+
+        [HttpPost("Login")]
+        public async Task<IActionResult> Login([FromBody] UserForAuthenticationDTO userForAuthentication)
+        {            var user = await _userManager.FindByEmailAsync("string");
+
+            Console.WriteLine("USER:::" + user.Email + ' ' + user.Password + ' ' + userForAuthentication.Password);
+            //var response = await _userManager.CheckPasswordAsync(user, userForAuthentication.Password);
+            //Console.WriteLine(response);
+            if (user == null || user.Password != userForAuthentication.Password)
+                return Unauthorized(new AuthResponseDTO { ErrorMessage = "Invalid Authentication" });
+            if (user != null)
+            {
+                Console.WriteLine("passed error" + user.Email);
+
+            }
+            var signingCredentials = _jwtHandler.GetSigningCredentials();
+            Console.WriteLine(signingCredentials.ToString());
+            var claims = _jwtHandler.GetClaims(user.Email);
+            Console.WriteLine("passed claims");
+            var tokenOptions = _jwtHandler.GenerateTokenOptions(signingCredentials, claims);
+            var token = new JwtSecurityTokenHandler().WriteToken(tokenOptions);
+
+            return Ok(new AuthResponseDTO { IsAuthSuccessful = true, Token = token });
         }
 
         // GET: api/Users
